@@ -47,6 +47,9 @@ services:
             $parser: '@PhpMimeMailParser\Parser'
             $mailer: '@mailer'
 
+    Voicemail\Updater:
+        arguments: ~
+
     ##################################
     ## Handlers
     ##################################

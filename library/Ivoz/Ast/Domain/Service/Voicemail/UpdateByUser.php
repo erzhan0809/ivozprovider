@@ -2,6 +2,7 @@
 
 namespace Ivoz\Ast\Domain\Service\Voicemail;
 
+use Ivoz\Ast\Domain\Model\Voicemail\Voicemail;
 use Ivoz\Ast\Domain\Model\Voicemail\VoicemailDto;
 use Ivoz\Ast\Domain\Model\Voicemail\VoicemailRepository;
 use Ivoz\Core\Domain\Service\EntityPersisterInterface;
@@ -42,7 +43,7 @@ class UpdateByUser implements UserLifecycleEventHandlerInterface
                 $user->getEmail()
             );
         } else {
-            $voicemailDto->setEmail(null);
+            $voicemailDto->setEmail(Voicemail::EMPTY_VOICEMAIL_ADDRESS);
         }
 
         if ($user->getVoicemailAttachSound()) {

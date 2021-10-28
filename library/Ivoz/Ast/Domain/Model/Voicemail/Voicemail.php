@@ -7,6 +7,8 @@ namespace Ivoz\Ast\Domain\Model\Voicemail;
  */
 class Voicemail extends VoicemailAbstract implements VoicemailInterface
 {
+    const EMPTY_VOICEMAIL_ADDRESS = "nobody@domain.invalid";
+
     use VoicemailTrait;
 
     /**

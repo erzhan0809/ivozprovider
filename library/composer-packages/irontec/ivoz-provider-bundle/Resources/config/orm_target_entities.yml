@@ -1,8 +1,10 @@
 doctrine:
   orm:
     resolve_target_entities:
-      Ivoz\Ast\Domain\Model\Hint\VoicemailInterface:
-        Ivoz\Ast\Domain\Model\Hint\Voicemail
+      Ivoz\Ast\Domain\Model\Voicemail\VoicemailInterface:
+        Ivoz\Ast\Domain\Model\Voicemail\Voicemail
+      Ivoz\Ast\Domain\Model\Hint\VoicemailMessageInterface:
+        Ivoz\Ast\Domain\Model\VoicemailMessage\VoicemailMessage
       Ivoz\Ast\Domain\Model\PsEndpoint\PsEndpointInterface:
         Ivoz\Ast\Domain\Model\PsEndpoint\PsEndpoint
       Ivoz\Ast\Domain\Model\PsIdentify\PsIdentifyInterface:
@@ -239,8 +241,6 @@ doctrine:
         Ivoz\Kam\Domain\Model\UsersLocation\UsersLocation
       Ivoz\Provider\Domain\Model\User\UserInterface:
         Ivoz\Provider\Domain\Model\User\User
-      Ivoz\Ast\Domain\Model\Voicemail\VoicemailInterface:
-        Ivoz\Ast\Domain\Model\Voicemail\Voicemail
       Ivoz\Kam\Domain\Model\TrunksLcrGateway\TrunksLcrGatewayInterface:
         Ivoz\Kam\Domain\Model\TrunksLcrGateway\TrunksLcrGateway
       Ivoz\Kam\Domain\Model\TrunksLcrRule\TrunksLcrRuleInterface:

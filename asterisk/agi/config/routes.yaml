@@ -73,3 +73,7 @@ Dialplan/FaxReceiveStatus:
 Voicemail/Sender:
   path: '/Voicemail/Sender'
   controller: 'kernel:handleRequestAction'
+
+voicemail/updater:
+  path: '/Voicemail/Updater'
+  controller: 'kernel:handleRequestAction'

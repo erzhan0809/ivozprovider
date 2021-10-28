@@ -9,8 +9,7 @@ require __DIR__ . '/../config/bootstrap.php';
 require __DIR__ . '/../src/Kernel.php';
 
 $kernel = new Kernel('prod', false, null);
-
-$request = Request::create('voicemail/sender', 'GET');
+$request = Request::create('Voicemail/Updater', 'GET');
 
 $response = $kernel->handle($request);
 $response->send();
