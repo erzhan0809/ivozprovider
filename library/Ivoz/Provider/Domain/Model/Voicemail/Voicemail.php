@@ -66,11 +66,11 @@ class Voicemail extends VoicemailAbstract implements VoicemailInterface
         $type = $this->getType();
 
         if ($type == self::VOICEMAIL_TYPE_USER) {
-            return self::VOICEMAIL_TYPE_USER . $this->getUser()->getId();
+            return self::VOICEMAIL_TYPE_USER . $this->getUser()?->getId();
         }
 
         if ($type == self::VOICEMAIL_TYPE_RESIDENTIAL) {
-            return self::VOICEMAIL_TYPE_RESIDENTIAL . $this->getResidentialDevice()->getId();
+            return self::VOICEMAIL_TYPE_RESIDENTIAL . $this->getResidentialDevice()?->getId();
         }
 
         return self::VOICEMAIL_TYPE_GENERIC . $this->getId();
