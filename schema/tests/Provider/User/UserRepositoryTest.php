@@ -5,6 +5,8 @@ namespace Tests\Provider\User;
 use Ivoz\Provider\Domain\Model\Administrator\Administrator;
 use Ivoz\Provider\Domain\Model\Administrator\AdministratorRepository;
 use Ivoz\Provider\Domain\Model\User\UserRepository;
+use Ivoz\Provider\Domain\Model\Voicemail\Voicemail;
+use Ivoz\Provider\Domain\Model\Voicemail\VoicemailRepository;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Tests\DbIntegrationTestHelperTrait;
 use Ivoz\Provider\Domain\Model\User\User;
@@ -100,18 +102,22 @@ class UserRepositoryTest extends KernelTestCase
         $userRepository = $this->em
             ->getRepository(User::class);
 
-        $users = $userRepository
-            ->getAvailableVoicemails(
+        /** @var VoicemailRepository $voicemailRepostory */
+        $voicemailRepostory = $this->em
+            ->getRepository(Voicemail::class);
+
+        $voicemails = $voicemailRepostory
+            ->getAvailableVoicemailsForUser(
                 $userRepository->find(1)
             );
 
         $this->assertIsArray(
-            $users
+            $voicemails
         );
 
         $this->assertInstanceOf(
-            User::class,
-            $users[0]
+            Voicemail::class,
+            $voicemails[0]
         );
     }
 
