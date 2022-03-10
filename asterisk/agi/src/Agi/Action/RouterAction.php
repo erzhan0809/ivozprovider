@@ -20,6 +20,7 @@ use Ivoz\Provider\Domain\Model\Ivr\IvrInterface;
 use Ivoz\Provider\Domain\Model\ResidentialDevice\ResidentialDeviceInterface;
 use Ivoz\Provider\Domain\Model\RetailAccount\RetailAccountInterface;
 use Ivoz\Provider\Domain\Model\User\UserInterface;
+use Ivoz\Provider\Domain\Model\Voicemail\VoicemailInterface;
 
 class RouterAction
 {
@@ -74,7 +75,7 @@ class RouterAction
     /**
      * @var AgentInterface | null
      */
-    protected $routeVoiceMail;
+    protected $routeVoicemail;
 
     /**
      * @var bool Determine if voicemail must play user-not-available banner
@@ -202,7 +203,7 @@ class RouterAction
     protected $serviceAction;
 
     /**
-     * @var VoiceMailAction
+     * @var VoicemailAction
      */
     protected $voiceMailAction;
 
@@ -222,7 +223,7 @@ class RouterAction
         ResidentialCallAction $residentialCallAction,
         RetailCallAction $retailCallAction,
         ServiceAction $serviceAction,
-        VoiceMailAction $voiceMailAction
+        VoicemailAction $voiceMailAction
     ) {
         $this->agi = $agi;
         $this->channelInfo = $channelInfo;
@@ -290,31 +291,9 @@ class RouterAction
         return $this;
     }
 
-    public function setRouteVoicemailUser(UserInterface $user = null, bool $playBanner = false)
+    public function setRouteVoicemail(VoicemailInterface $voicemail, bool $playBanner = false)
     {
-        if (!$user) {
-            $this->routeVoiceMail = null;
-            return $this;
-        }
-
-        return $this->setRouteVoicemail(new UserAgent($this->agi, $user), $playBanner);
-    }
-
-    public function setRouteVoicemailResidential(ResidentialDeviceInterface $residentialDevice = null, bool $playBanner = false)
-    {
-        if (!$residentialDevice) {
-            $this->routeVoiceMail = null;
-            return $this;
-        }
-
-        return $this->setRouteVoicemail(new ResidentialAgent($this->agi, $residentialDevice), $playBanner);
-    }
-
-
-    private function setRouteVoicemail(AgentInterface $routeVoicemail = null, bool $playBanner = false)
-    {
-        $this->routeVoiceMail = $routeVoicemail;
-        $this->routeVoicemailBanner = $playBanner;
+        $this->setRouteVoicemail($voicemail, $playBanner);
         return $this;
     }
 
@@ -378,7 +357,7 @@ class RouterAction
                 $this->routeToIVR();
                 break;
             case RouterAction::Voicemail:
-                $this->routeToVoiceMail();
+                $this->routeToVoicemail();
                 break;
             case RouterAction::HuntGroup:
                 $this->routeToHuntGroup();
@@ -448,11 +427,11 @@ class RouterAction
             ->process();
     }
 
-    protected function routeToVoiceMail()
+    protected function routeToVoicemail()
     {
         $this->voiceMailAction
             ->setPlayBanner($this->routeVoicemailBanner)
-            ->setVoiceMail($this->routeVoiceMail)
+            ->setVoicemai($this->routeVoicemail)
             ->process();
     }
 
