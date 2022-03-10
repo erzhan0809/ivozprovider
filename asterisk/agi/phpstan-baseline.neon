@@ -76,12 +76,12 @@ parameters:
 			path: src/Agi/Action/ExternalFilterAction.php
 
 		-
-			message: "#^Cannot call method getVoiceMailUser\\(\\) on Ivoz\\\\Provider\\\\Domain\\\\Model\\\\CalendarPeriod\\\\CalendarPeriodInterface\\|null\\.$#"
+			message: "#^Cannot call method getVoicemail\\(\\) on Ivoz\\\\Provider\\\\Domain\\\\Model\\\\CalendarPeriod\\\\CalendarPeriodInterface\\|null\\.$#"
 			count: 1
 			path: src/Agi/Action/ExternalFilterAction.php
 
 		-
-			message: "#^Cannot call method getVoiceMailUser\\(\\) on Ivoz\\\\Provider\\\\Domain\\\\Model\\\\HolidayDate\\\\HolidayDateInterface\\|null\\.$#"
+			message: "#^Cannot call method getVoicemail\\(\\) on Ivoz\\\\Provider\\\\Domain\\\\Model\\\\HolidayDate\\\\HolidayDateInterface\\|null\\.$#"
 			count: 1
 			path: src/Agi/Action/ExternalFilterAction.php
 
@@ -246,7 +246,7 @@ parameters:
 			path: src/Agi/Action/IvrAction.php
 
 		-
-			message: "#^Cannot call method getErrorVoiceMailUser\\(\\) on Ivoz\\\\Provider\\\\Domain\\\\Model\\\\Ivr\\\\IvrInterface\\|null\\.$#"
+			message: "#^Cannot call method getErrorVoicemail\\(\\) on Ivoz\\\\Provider\\\\Domain\\\\Model\\\\Ivr\\\\IvrInterface\\|null\\.$#"
 			count: 1
 			path: src/Agi/Action/IvrAction.php
 
@@ -271,7 +271,7 @@ parameters:
 			path: src/Agi/Action/IvrAction.php
 
 		-
-			message: "#^Cannot call method getNoInputVoiceMailUser\\(\\) on Ivoz\\\\Provider\\\\Domain\\\\Model\\\\Ivr\\\\IvrInterface\\|null\\.$#"
+			message: "#^Cannot call method getNoInputVoicemail\\(\\) on Ivoz\\\\Provider\\\\Domain\\\\Model\\\\Ivr\\\\IvrInterface\\|null\\.$#"
 			count: 1
 			path: src/Agi/Action/IvrAction.php
 
@@ -421,7 +421,7 @@ parameters:
 			path: src/Agi/Action/RouterAction.php
 
 		-
-			message: "#^Method Agi\\\\Action\\\\RouterAction\\:\\:routeToVoiceMail\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Agi\\\\Action\\\\RouterAction\\:\\:routeToVoicemail\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: src/Agi/Action/RouterAction.php
 
@@ -502,16 +502,6 @@ parameters:
 
 		-
 			message: "#^Method Agi\\\\Action\\\\RouterAction\\:\\:setRouteVoicemail\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: src/Agi/Action/RouterAction.php
-
-		-
-			message: "#^Method Agi\\\\Action\\\\RouterAction\\:\\:setRouteVoicemailResidential\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: src/Agi/Action/RouterAction.php
-
-		-
-			message: "#^Method Agi\\\\Action\\\\RouterAction\\:\\:setRouteVoicemailUser\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: src/Agi/Action/RouterAction.php
 
@@ -671,7 +661,7 @@ parameters:
 			path: src/Agi/Action/ServiceAction.php
 
 		-
-			message: "#^Method Agi\\\\Action\\\\ServiceAction\\:\\:processVoiceMail\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method Agi\\\\Action\\\\ServiceAction\\:\\:processVoicemail\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: src/Agi/Action/ServiceAction.php
 
@@ -726,19 +716,24 @@ parameters:
 			path: src/Agi/Action/UserStatusAction.php
 
 		-
-			message: "#^Cannot call method getVoiceMail\\(\\) on Agi\\\\Agents\\\\AgentInterface\\|null\\.$#"
+			message: "#^Call to an undefined method Agi\\\\Agents\\\\AgentInterface\\:\\:getEnabledt\\(\\)\\.$#"
 			count: 1
-			path: src/Agi/Action/VoiceMailAction.php
+			path: src/Agi/Action/VoicemailAction.php
 
 		-
-			message: "#^Method Agi\\\\Action\\\\VoiceMailAction\\:\\:process\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: src/Agi/Action/VoiceMailAction.php
+			message: "#^Call to an undefined method Agi\\\\Agents\\\\AgentInterface\\:\\:getLocution\\(\\)\\.$#"
+			count: 2
+			path: src/Agi/Action/VoicemailAction.php
 
 		-
-			message: "#^Method Agi\\\\Action\\\\VoiceMailAction\\:\\:processResidential\\(\\) has no return typehint specified\\.$#"
+			message: "#^Call to an undefined method Agi\\\\Agents\\\\AgentInterface\\:\\:getVoicemailName\\(\\)\\.$#"
 			count: 1
-			path: src/Agi/Action/VoiceMailAction.php
+			path: src/Agi/Action/VoicemailAction.php
+
+		-
+			message: "#^Method Agi\\\\Action\\\\VoicemailAction\\:\\:process\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Agi/Action/VoicemailAction.php
 
 		-
 			message: "#^Method Agi\\\\Agents\\\\DdiAgent\\:\\:getId\\(\\) should return string but returns int\\|null\\.$#"
@@ -751,7 +746,17 @@ parameters:
 			path: src/Agi/Agents/DdiAgent.php
 
 		-
+			message: "#^Method Agi\\\\Agents\\\\DdiAgent\\:\\:getVoicemail\\(\\) should return Ivoz\\\\Provider\\\\Domain\\\\Model\\\\Voicemail\\\\VoicemailInterface but returns null\\.$#"
+			count: 1
+			path: src/Agi/Agents/DdiAgent.php
+
+		-
 			message: "#^Method Agi\\\\Agents\\\\FaxAgent\\:\\:getPickupGroups\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Agi/Agents/FaxAgent.php
+
+		-
+			message: "#^Method Agi\\\\Agents\\\\FaxAgent\\:\\:getVoicemail\\(\\) should return Ivoz\\\\Provider\\\\Domain\\\\Model\\\\Voicemail\\\\VoicemailInterface but returns null\\.$#"
 			count: 1
 			path: src/Agi/Agents/FaxAgent.php
 
@@ -781,6 +786,11 @@ parameters:
 			path: src/Agi/Agents/FriendAgent.php
 
 		-
+			message: "#^Method Agi\\\\Agents\\\\FriendAgent\\:\\:getVoicemail\\(\\) should return Ivoz\\\\Provider\\\\Domain\\\\Model\\\\Voicemail\\\\VoicemailInterface but returns null\\.$#"
+			count: 1
+			path: src/Agi/Agents/FriendAgent.php
+
+		-
 			message: "#^Cannot call method getT38Udptl\\(\\) on Ivoz\\\\Ast\\\\Domain\\\\Model\\\\PsEndpoint\\\\PsEndpointInterface\\|null\\.$#"
 			count: 1
 			path: src/Agi/Agents/ResidentialAgent.php
@@ -796,12 +806,22 @@ parameters:
 			path: src/Agi/Agents/ResidentialAgent.php
 
 		-
+			message: "#^Method Agi\\\\Agents\\\\ResidentialAgent\\:\\:getVoicemail\\(\\) should return Ivoz\\\\Provider\\\\Domain\\\\Model\\\\Voicemail\\\\VoicemailInterface but returns Ivoz\\\\Provider\\\\Domain\\\\Model\\\\Voicemail\\\\VoicemailInterface\\|null\\.$#"
+			count: 1
+			path: src/Agi/Agents/ResidentialAgent.php
+
+		-
 			message: "#^Method Agi\\\\Agents\\\\RetailAgent\\:\\:getId\\(\\) should return string but returns int\\|null\\.$#"
 			count: 1
 			path: src/Agi/Agents/RetailAgent.php
 
 		-
 			message: "#^Method Agi\\\\Agents\\\\RetailAgent\\:\\:getPickupGroups\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Agi/Agents/RetailAgent.php
+
+		-
+			message: "#^Method Agi\\\\Agents\\\\RetailAgent\\:\\:getVoicemail\\(\\) should return Ivoz\\\\Provider\\\\Domain\\\\Model\\\\Voicemail\\\\VoicemailInterface but returns null\\.$#"
 			count: 1
 			path: src/Agi/Agents/RetailAgent.php
 
@@ -822,6 +842,11 @@ parameters:
 
 		-
 			message: "#^Method Agi\\\\Agents\\\\UserAgent\\:\\:getPickUpGroups\\(\\) should return array\\<Ivoz\\\\Provider\\\\Domain\\\\Model\\\\PickUpGroup\\\\PickUpGroupInterface\\>\\|null but returns array\\<Ivoz\\\\Provider\\\\Domain\\\\Model\\\\PickUpGroup\\\\PickUpGroupInterface\\|null\\>\\.$#"
+			count: 1
+			path: src/Agi/Agents/UserAgent.php
+
+		-
+			message: "#^Method Agi\\\\Agents\\\\UserAgent\\:\\:getVoiceMail\\(\\) should return Ivoz\\\\Provider\\\\Domain\\\\Model\\\\Voicemail\\\\VoicemailInterface but returns Ivoz\\\\Provider\\\\Domain\\\\Model\\\\Voicemail\\\\VoicemailInterface\\|null\\.$#"
 			count: 1
 			path: src/Agi/Agents/UserAgent.php
 
@@ -1524,6 +1549,11 @@ parameters:
 			message: "#^Method RouteHandlerAbstract\\:\\:process\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: src/RouteHandlerAbstract.php
+
+		-
+			message: "#^Call to an undefined method Ivoz\\\\Ast\\\\Domain\\\\Model\\\\Voicemail\\\\VoicemailInterface\\:\\:getUser\\(\\)\\.$#"
+			count: 1
+			path: src/Voicemail/Sender.php
 
 		-
 			message: "#^Cannot call method getBody\\(\\) on Ivoz\\\\Provider\\\\Domain\\\\Model\\\\NotificationTemplateContent\\\\NotificationTemplateContentInterface\\|null\\.$#"

@@ -56,6 +56,11 @@ parameters:
 			path: src/Controller/My/CompanyExtensionsAction.php
 
 		-
+			message: "#^Call to an undefined method Ivoz\\\\Provider\\\\Domain\\\\Model\\\\Voicemail\\\\VoicemailRepository\\:\\:getAvailableVoicemailsForUser\\(\\)\\.$#"
+			count: 1
+			path: src/Controller/My/CompanyVoicemailsAction.php
+
+		-
 			message: "#^Method Controller\\\\My\\\\CompanyVoicemailsAction\\:\\:__invoke\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: src/Controller/My/CompanyVoicemailsAction.php
