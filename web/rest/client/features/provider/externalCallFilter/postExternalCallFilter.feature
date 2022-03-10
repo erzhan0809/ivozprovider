@@ -21,8 +21,8 @@ Feature: Create external call filters
           "outOfScheduleLocution": null,
           "holidayExtension": null,
           "outOfScheduleExtension": null,
-          "holidayVoiceMailUser": null,
-          "outOfScheduleVoiceMailUser": null,
+          "holidayVoicemail": null,
+          "outOfScheduleVoicemail": null,
           "holidayNumberCountry": 77,
           "outOfScheduleNumberCountry": 77,
           "scheduleIds": [
@@ -56,8 +56,8 @@ Feature: Create external call filters
           "outOfScheduleLocution": null,
           "holidayExtension": null,
           "outOfScheduleExtension": null,
-          "holidayVoiceMailUser": null,
-          "outOfScheduleVoiceMailUser": null,
+          "holidayVoicemail": null,
+          "outOfScheduleVoicemail": null,
           "holidayNumberCountry": {
               "code": "GB",
               "countryCode": "+44",
@@ -128,8 +128,8 @@ Feature: Create external call filters
           "outOfScheduleLocution": null,
           "holidayExtension": null,
           "outOfScheduleExtension": null,
-          "holidayVoiceMailUser": null,
-          "outOfScheduleVoiceMailUser": null,
+          "holidayVoicemail": null,
+          "outOfScheduleVoicemail": null,
           "holidayNumberCountry": {
               "code": "GB",
               "countryCode": "+44",

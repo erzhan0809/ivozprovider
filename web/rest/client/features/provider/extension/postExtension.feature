@@ -74,9 +74,6 @@ Feature: Create extensions
               "maxCalls": 1,
               "externalIpCalls": "0",
               "rejectCallMethod": "rfc",
-              "voicemailEnabled": true,
-              "voicemailSendMail": true,
-              "voicemailAttachSound": true,
               "multiContact": true,
               "gsQRCode": false,
               "id": 1,
@@ -89,8 +86,7 @@ Feature: Create extensions
               "extension": 5,
               "timezone": 145,
               "outgoingDdi": null,
-              "outgoingDdiRule": null,
-              "voicemailLocution": null
+              "outgoingDdiRule": null
           },
           "queue": null,
           "conditionalRoute": null,
