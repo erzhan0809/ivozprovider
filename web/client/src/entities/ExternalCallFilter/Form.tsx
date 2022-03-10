@@ -38,7 +38,7 @@ const Form = (props: EntityFormProps): JSX.Element => {
                 'holidayNumberCountry',
                 'holidayNumberValue',
                 'holidayExtension',
-                'holidayVoiceMailUser',
+                'holidayVoicemail',
             ]
         },
         {
@@ -50,7 +50,7 @@ const Form = (props: EntityFormProps): JSX.Element => {
                 'outOfScheduleNumberCountry',
                 'outOfScheduleNumberValue',
                 'outOfScheduleExtension',
-                'outOfScheduleVoiceMailUser',
+                'outOfScheduleVoicemail',
             ]
         },
     ];
